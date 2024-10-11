@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IPhO 2001</title> <!-- Make sure the path to your CSS is correct -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="/css/ipho2011.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+
+<body>
+    <div>
+    <nav class="navbar fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="../index.html">Home</a>
+      </nav>
+    </div>
+      <div class="mt-5">
+        <br>
+        <div class="context">
+        <h2>Problem 1: A Three Body Problem and LISA</h2><br>
+        <h4><b>Context:</b> Three body problem, as you may have learned from the TV show 
+            (if you havent already seen it, check out the original chinese one), refers to three planetary objects in stationary orbit together.
+            It means when they orbit around their star, their relative positions always remains the same and their center of mass always remains 
+            on the same orbit. And LISA or Laser Interferometer Space Antenna is a proposed space probe to detect and accurately measure 
+            gravitiational wave.
+        </h4>
+        <h3>1.1</h3><h5> This part of the problem asks to find the angular velocity of the line joining to objects orbiting the same point, which 
+            happens to be their common center of mass.
+        </h5>
+      </div>
+      </div>
+      
+      <div class="container">
+        <div class="button-container">
+            <button class="button pov-button" id="sphere1">Sphere 1 POV</button>
+            <button class="button pov-button" id="sphere2">Sphere 2 POV</button>
+            <button class="button pov-button" id="reset">Reset</button>
+        </div>
+        <div class="content" id="output1">
+            <script type="module" src="/js/ipho2011.1.js"></script>
+        </div>
+    </div>
+    
+    
+      <div class="context">
+        To solve, we first consider the angular frequecy from one of the planets POV. Click on the planets to see how the whole system suddenly looks
+        like it got faster. That happens cause of fictitious forces. Since the planets are both moving, any observer on their surface wont feel
+        their own planets motion, rather they would see the other planet going with a frequecy that is the sum of their indiviual ones:<br>
+        from m's perspective, the force equation is $$mw_0^2r = \frac{GMm}{(R+r)^2}$$
+        from M's perspective, the force equation, $$Mw_0^2R = \frac{GMm}{(R+r)^2}$$
+        by taking reduced mass to account for the fictious forces, $$\frac{GMm}{M+m}w_0^2(R+r) = \frac{GMm}{(R+r)^2}$$<br>
+        $$w_0 = \sqrt{\frac{M+m}{(R+r)^3}}$$
+    </div>
+      <div class="context"><h3>1.2</h3><br>
+      In this part we add an infinitesimal mass \(\mu\) so that it also rotates around the common center of mass. as a result this mass is going 
+    to look stationary from both M and m's POV</div>
+    <div class="container">
+      <div class="button-container">
+          <button class="button pov-button" id="2sphere1">Sphere 1 POV</button>
+          <button class="button pov-button" id="2sphere2">Sphere 2 POV</button>
+          <button class="button pov-button" id="2sphere3">Sphere 3 POV</button>
+          <button class="button pov-button" id="2reset">Reset</button>
+      </div>
+      <div class="content" id="threejs-container">
+          <script type="module" src="/js/ipho2011.js"></script>
+      </div><br>
+      </div>
+      <div class="context">Since \(\mu\) is infinitesimal, it has no gravitational influences on the motion of neither M nor m. For \(\mu\) to remain stationary relative to both M and m, we must have:
+
+        \[
+        \frac{GM \mu}{r_1^2} \cos \theta_1 + \frac{Gm \mu}{r_2^2} \cos \theta_2 = \mu e_0^2 \rho = \frac{G(M + m) \mu}{(R + r)^3} \rho \tag{4}
+        \]
+        
+        \[
+        \frac{GM \mu}{r_1^2} \sin \theta_1 = \frac{Gm \mu}{r_2^2} \sin \theta_2 \tag{5}
+        \]
+        
+        Substituting \(\frac{GM}{r_1^2}\) from Eq. (5) into Eq. (4), and using the identity
+        
+        \[
+        \sin \theta_1 \cos \theta_2 + \cos \theta_1 \sin \theta_2 = \sin(\theta_1 + \theta_2)
+        \]
+        
+        we get:
+        
+        \[
+        \frac{m \sin(\theta_1 + \theta_2)}{r_2^2 }= \frac{(M + m)}{(R + r)^3} \rho \sin \theta_1 \tag{6}
+        \]
+        
+        The distances \(r_2\) and \(\rho\), the angles \(\theta_1\) and \(\theta_2\) are related by two Sine Rule equations:
+        
+        \[
+        \frac{\sin \psi_1}{\rho} = \frac{\sin \theta_1}{R}
+        \]
+        \[
+        \sin \psi_1 r_2 = \frac{\sin(\theta_1 + \theta_2)}{R + r} \tag{7}
+        \]
+        
+        Substitute (7) into (6):
+        
+        \[
+        \frac{1}{r_2^3} = \frac{R}{(R + r)^4} \frac{(M + m)}{m} \tag{10}
+        \]
+        since
+        \[
+         \frac{m}{M + m} = \frac{R}{R + r};
+        \]
+        we get from eq. 10 
+        \[
+        \quad r_2 = R + r
+        \]
+        
+        By substituting \frac{Gm}{r_2^2} from Eq. (5) into Eq. (4), and repeating a similar procedure, we get:
+        
+        \[
+        r_1 = R + r \tag{11},
+        \]
+        \[
+        \quad r_2 = R + r \tag{12}
+        \]
+        
+        \[r_1 = r_2\]
+        
+        so, the only way all three masses, of different units, would be in equilibrium and rotate around a common COM, is if they are positioned
+        on the vertexes of a equilateral triangle
+       
+        </div>
+      
+      
+   
+</body>

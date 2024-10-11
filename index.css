@@ -1,0 +1,35 @@
+.entries {
+    
+    height: 100%;
+    width: 100%;
+    padding: 3%;
+    border: 20px;
+    color:rgba(255, 255, 255, 0.359);
+    background-color: rgb(16, 17, 18);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    white-space: pre-wrap; /* Keeps formatting when breaking lines */
+}
+
+
+
+#first_entry {
+    border: 10px;
+    border-color: azure;
+}
+
+/* Blinking cursor effect */
+.cursor {
+    display: inline-block;
+    background-color: black;
+    color: transparent;
+    width: 10px;
+    margin-left: 2px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { background-color: rgba(255, 255, 255, 0.359); }
+    50% { background-color: transparent; }
+    100% { background-color: rgba(255, 255, 255, 0.359); }
+}
