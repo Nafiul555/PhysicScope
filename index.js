@@ -1,3 +1,4 @@
+import * as THREE from 'three';
 // Texts to be typed out
 import * as THREE from 'three';
 
