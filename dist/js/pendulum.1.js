@@ -13,7 +13,7 @@ document.getElementById('content2').appendChild(renderer.domElement);
 const controls = new OrbitControls(camera, renderer.domElement);
 
 // Lighting
-const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
 scene.add(ambientLight);
 
 const pointLight = new THREE.PointLight(0xffffff, 0.5);
