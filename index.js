@@ -1,3 +1,4 @@
+import * as THREE from 'three';
 // Texts to be typed out
 const titleText = "Welcome!!";
 const contentText = "This is a website I created as a passion project to keep track of my PhO prep. Many PhO problems are deeply intriguing but people find them hard to solve because they are hard to visualize. In this website, I try to render the problem setup so that it becomes just a bit easier, a bit more intuitive.";
