@@ -44,10 +44,31 @@
     </div>
     </div>
     <div class="context">
-        In order to create the pendulum, First created a group to store the meshes, then I created the rods and the bobs separately and stored them
-        one after the other (used a for loop for the 10 pendulums) in the group. I also created an array where I stored their positions and a random
-        number between 0.01 and 0.05 that I'd use as their frequencies.<br>
-        Once done with the setup, I moved into animation, where I defined pendulumAngle variable and continuously update the variable inside the 
-        animation function, and rotate the Meshes, i.e., the bobs and rods, along the z axis.
+        To create the perfect collision, I had to implement both the conservation of momentum and the conservation of energy. 
+
+Let the red ball's mass be \( m_{\text{red}} \), its initial velocity be \( u_{\text{red}} \), and its final velocity be \( v_{\text{red}} \). Similarly, let the blue ball's mass be \( m_{\text{blue}} \), its initial velocity be \( u_{\text{blue}} \), and its final velocity be \( v_{\text{blue}} \). According to the law of conservation of momentum:
+
+\[
+m_{\text{red}} u_{\text{red}} + m_{\text{blue}} u_{\text{blue}} = m_{\text{red}} v_{\text{red}} + m_{\text{blue}} v_{\text{blue}} \tag{1}
+\]
+
+In this equation, the unknowns are \( v_{\text{red}} \) and \( v_{\text{blue}} \). To solve for these two unknowns, we need a second equation. Fortunately, energy is also conserved in this elastic collision. According to the conservation of kinetic energy:
+
+\[
+\frac{1}{2} m_{\text{red}} u_{\text{red}}^2 + \frac{1}{2} m_{\text{blue}} u_{\text{blue}}^2 = \frac{1}{2} m_{\text{red}} v_{\text{red}}^2 + \frac{1}{2} m_{\text{blue}} v_{\text{blue}}^2 \tag{2}
+\]
+
+From these two equations, we can solve for \( v_{\text{red}} \) and \( v_{\text{blue}} \). The solutions are:
+
+\[
+v_{\text{red}} = \frac{m_{\text{red}} - m_{\text{blue}}}{m_{\text{red}} + m_{\text{blue}}} u_{\text{red}} + \frac{2 m_{\text{blue}}}{m_{\text{red}} + m_{\text{blue}}} u_{\text{blue}}
+\]
+
+and
+
+\[
+v_{\text{blue}} = \frac{m_{\text{blue}} - m_{\text{red}}}{m_{\text{red}} + m_{\text{blue}}} u_{\text{blue}} + \frac{2 m_{\text{red}}}{m_{\text{red}} + m_{\text{blue}}} u_{\text{red}}
+\]
+
     </div>
     
