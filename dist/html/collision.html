@@ -22,28 +22,27 @@
     <div class="mt-5">
     
     <div class="container">
-        <div class="button-container">
-            <label for="redballemass">Red Ball Mass: </label>
-            <input type="number" id="redballemass" class="input" placeholder="Enter red ball mass" />
-
-            <label for="blueballemass">Blue Ball Mass: </label>
-            <input type="number" id="blueballemass" class="input" placeholder="Enter blue ball mass" />
-
-            <label for="redballspeed">Red Ball Speed: </label>
-            <input type="number" id="redballspeed" class="input" placeholder="Enter red ball speed" />
-
-            <label for="blueballspeed">Blue Ball Speed: </label>
-            <input type="number" id="blueballspeed" class="input" placeholder="Enter blue ball speed" />
-
-            <button id="updateButton">Update Balls</button>
-
-        </div>
-        
-    
     <div class="content" id="content">
         <script type="module" src="../js/collision.js"></script>
     </div>
-</div><br></div>
+    </div><br>
+    <div class="button-container">
+        <label for="redballemass">Red Ball Mass: </label>
+        <input type="number" id="redballemass" class="input" placeholder="Enter red ball mass" />
+
+        <label for="blueballemass">Blue Ball Mass: </label>
+        <input type="number" id="blueballemass" class="input" placeholder="Enter blue ball mass" />
+
+        <label for="redballspeed">Red Ball Speed: </label>
+        <input type="number" id="redballspeed" class="input" placeholder="Enter red ball speed" />
+
+        <label for="blueballspeed">Blue Ball Speed: </label>
+        <input type="number" id="blueballspeed" class="input" placeholder="Enter blue ball speed" />
+
+        <button class="pov-button" id="updateButton">Update Balls</button>
+
+    </div>
+    </div>
     <div class="context">
         In order to create the pendulum, First created a group to store the meshes, then I created the rods and the bobs separately and stored them
         one after the other (used a for loop for the 10 pendulums) in the group. I also created an array where I stored their positions and a random
