@@ -1,10 +1,7 @@
-<<<<<<< HEAD
+
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.112/build/three.module.js';
 import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.112/examples/jsm/controls/OrbitControls.js';
-=======
-import * as THREE from 'three';
-import { OrbitControls } from "https://unpkg.com/three@0.112/examples/jsm/controls/OrbitControls.js";
->>>>>>> 3590b2e90c7d1de1efaceb56cec1e130c44fd49a
+
 
 
 let scene;
