@@ -31,6 +31,32 @@
         Once done with the setup, I moved into animation, where I defined pendulumAngle variable and continuously update the variable inside the 
         animation function, and rotate the Meshes, i.e., the bobs and rods, along the z axis.
       </div>
+      <div class="context">
+        A single pendulum consists of a mass \( m \) attached to the end of a lightweight rod of length \( L \), which is fixed at one end and free to swing. The motion of the pendulum can be modeled by the following equation of motion derived from Newton's second law and considering small-angle approximations:
+    
+        \[
+        \theta(t) = \theta_0 \cos\left(\sqrt{\frac{g}{L}} t\right)
+        \]
+    
+        where \( \theta(t) \) is the angular displacement at time \( t \), \( \theta_0 \) is the initial angle, and \( g \) is the acceleration due to gravity. The angular frequency \( \omega = \sqrt{\frac{g}{L}} \) governs the oscillatory motion.
+    
+        In the simulation, I created a group to store the pendulum's components, such as the rod and bob, and used a loop to handle multiple pendulums. Each pendulum has a randomly assigned frequency between 0.01 and 0.05 radians per second, which simulates different oscillation rates. The animation updates the angular displacement \( \theta(t) \) and rotates the meshes along the z-axis accordingly.
+    </div>
     <div class="content" id="content2">
         <script type="module" src="../js/pendulum.1.js"></script>
-    </div><br>
+    </div>
+    <div class="context">
+        A double pendulum is an extension of the single pendulum, where a second pendulum is attached to the first. The dynamics of this system are much more complex due to the chaotic nature of the motion. The equations of motion are derived using Lagrangian mechanics, and for two masses \( m_1 \) and \( m_2 \), with lengths \( L_1 \) and \( L_2 \), the equations are:
+    
+        \[
+        \ddot{\theta}_1 = \frac{-g (2m_1 + m_2) \sin \theta_1 - m_2 g \sin(\theta_1 - 2\theta_2) - 2 \sin(\theta_1 - \theta_2) m_2 \left( \dot{\theta}_2^2 L_2 + \dot{\theta}_1^2 L_1 \cos(\theta_1 - \theta_2) \right)}{L_1 \left( 2m_1 + m_2 - m_2 \cos(2\theta_1 - 2\theta_2) \right)}
+        \]
+    
+        \[
+        \ddot{\theta}_2 = \frac{2 \sin(\theta_1 - \theta_2) \left( \dot{\theta}_1^2 L_1 (m_1 + m_2) + g (m_1 + m_2) \cos \theta_1 + \dot{\theta}_2^2 L_2 m_2 \cos(\theta_1 - \theta_2) \right)}{L_2 \left( 2m_1 + m_2 - m_2 \cos(2\theta_1 - 2\theta_2) \right)}
+        \]
+    
+        These two coupled, nonlinear differential equations govern the angular accelerations \( \ddot{\theta}_1 \) and \( \ddot{\theta}_2 \), making the system sensitive to initial conditions. In the simulation, the two rods and two bobs are rendered as separate meshes and connected via joint constraints. The chaotic nature of the double pendulum results in unpredictable, fascinating motions, which are captured by continuously updating the angles \( \theta_1(t) \) and \( \theta_2(t) \) in the animation.
+    </div>
+    
+    <br>
