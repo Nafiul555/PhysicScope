@@ -39,7 +39,42 @@
         <script type="module" src="../js/ipho2016.js"></script>
     </div>
     <div class="context">
-      First we t
+        The rotational dynamics that we will solve for in this problem are the angular frequency \(\dot{\phi}\), the angular acceleration \(\ddot{\phi}\), and the period \(T\). 
+
+        The given values are the mass \(m\), the distance from the axis of symmetry to the center of mass \(b\), and the moment of inertia along the symmetry axis \(I_s\).
+        
+        First, for the angular velocity, we model the setup using the standard equation of motion for a pendulum:
+        \[
+        \phi(t) = A \cos(\omega t),
+        \]
+        where \(\omega\) is the angular frequency. By differentiating this equation once, we obtain the angular velocity:
+        \[
+        \dot{\phi}(t) = -A\omega \sin(\omega t).
+        \]
+        Differentiating it again gives the angular acceleration:
+        \[
+        \ddot{\phi}(t) = -\omega^2 A \cos(\omega t) = -\omega^2 \phi(t).
+        \]
+        
+        These are the straightforward parts of the problem. Now, we proceed to finding the period \(T\), or equivalently, the angular frequency \(\omega\), which requires some additional thinking.
+        
+        To find \(\omega\), we start by writing down the torque equation:
+        \[
+        \tau = I_s \ddot{\phi} = -M g b \sin(\phi),
+        \]
+        where \(\tau\) is the torque and \(M\) is the total mass. For small angles, where \(\sin(\phi) \approx \phi\), this simplifies to:
+        \[
+        I_s \omega^2 \phi = M g b \phi.
+        \]
+        Canceling \(\phi\) on both sides, we get:
+        \[
+        \omega^2 = \frac{M g b}{I_s}.
+        \]
+        Therefore, the period \(T\) is:
+        \[
+        T = 2\pi \sqrt{\frac{I_s}{M g b}}.
+        \]
+         
     </div>
 </body>
 
