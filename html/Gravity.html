@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projectile Motion</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../css/projectile.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar fixed-top navbar-dark bg-dark">
+            <a class="navbar-brand" href="../index.html">Home</a>
+        </nav>
+    </div><br>
+    <div class="mt-5">
+        <div class="container">
+            <div class="content" id="content">
+                <script type="module" src="../js/projectile.js"></script>
+            </div>
+        </div><br>
+        
+        <div class="button-container">
+            <label for="initialVelocity">Initial Velocity (m/s): </label>
+            <input type="number" id="initialVelocity" class="input" placeholder="Enter initial velocity" />
+
+            <label for="angle">Launch Angle (degrees): </label>
+            <input type="number" id="angle" class="input" placeholder="Enter launch angle" />
+
+            <button class="pov-button" id="launchButton">Launch</button>
+        </div>
+    </div>
+
+    <div class="context">
+        To simulate projectile motion, we need to understand the basic physics principles behind it. 
+
+When an object is launched with an initial velocity \( v_0 \) at an angle \( \theta \) from the horizontal, its motion can be split into two components:
+
+- Horizontal motion: at a constant velocity.
+- Vertical motion: under constant acceleration due to gravity \( g \).
+
+The horizontal displacement \( x \) and the vertical displacement \( y \) as functions of time \( t \) are given by the following equations:
+
+\[
+x(t) = v_0 \cos(\theta) \cdot t \tag{1}
+\]
+\[
+y(t) = v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2 \tag{2}
+\]
+
+Here, \( g \) is the acceleration due to gravity, which is approximately \( 9.81 \, \text{m/s}^2 \) near the Earth's surface.
+
+To calculate the time of flight, we use the fact that the vertical displacement becomes zero when the projectile hits the ground again. Setting \( y(t) = 0 \), we can solve for \( t \). The total time of flight is:
+
+\[
+t_{\text{flight}} = \frac{2 v_0 \sin(\theta)}{g} \tag{3}
+\]
+
+The maximum height reached by the projectile occurs at \( t = \frac{v_0 \sin(\theta)}{g} \) and is given by:
+
+\[
+h_{\text{max}} = \frac{v_0^2 \sin^2(\theta)}{2g} \tag{4}
+\]
+
+The horizontal range of the projectile, or how far it travels before hitting the ground, is:
+
+\[
+R = \frac{v_0^2 \sin(2\theta)}{g} \tag{5}
+\]
+
+By plugging in the values for the initial velocity \( v_0 \) and angle \( \theta \), we can compute the time of flight, maximum height, and range for any projectile.
+
+Try launching the projectile with different velocities and angles to see how it affects the motion!
+
+    </div>
+</body>
+</html>
