@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>IPhO 2001</title> <!-- Make sure the path to your CSS is correct -->
+    <title>Unusual Disk Pendulum</title> <!-- Make sure the path to your CSS is correct -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../index.css">
@@ -25,12 +25,12 @@
         <div class="context">
             <h2>Problem 1: An Unusual Pendulum</h2><br>
             <h4><b>Context:</b> 
-            Usually the pendulum problems we solve have the axis of symmetry and the COM as the same point, but here by adding a metal ball (black ball
-            in the 3d model) we have moved the COM a bit to the right. In the model, the gold thread goes through the COM and the white thread goes 
-            through the axis of symmetry.</h4>
-            <h3>1.2</h3>
-            <h5>This is a follow-up to the "Unusual Disk on Slanted Plane" problem that I solved before. In this part our goal is to find
-            all the properties related to the rotational dynamic of the system with respect to its symmetry axis. Please check out this 
+            In this problem we are given a disk on a slanted plane of angle /[/theta/]. A very basic setup. But what makes it interesting 
+            is the Unusual build of the disk. Its of radius R and made of wood, but inside its curcumference, at a distance d 
+            from the axis of symmetry is a metal disk of radius r.</h4>
+            
+            <h5>as you can see from the model, the disk rolls down the slanted plane for a very short period of time and then becomes still
+            Our goal is to find the angle \[\phi\] that it rotates by before coming to a stop. Plase refer to this
             <a href="https://ipho.olimpicos.net/pdf/IPhO_2016_Q1.pdf">link</a> for the problem statement.
             </h5>
         </div>
@@ -39,8 +39,42 @@
         <script type="module" src="../js/ipho2016.1.js"></script>
     </div>
     <div class="context">
-      First we take
+        The known quantities we have are the radius of the whole disk \( R \), the slanted angle \( \theta \), and the distance from 
+        the axis of symmetry to the center of the metal ball \( d \). The disk is of mass \( M \) and the ball is of mass \( m \).<br>
+        To solve this problem, we first need to find the forces and then the torque acting on the disk.<br>
+        From the model, it's very clear that one of the forces is the component of gravity acting between the disk and the plank:
+        
+        \[
+        F_{\text{along plank}} = mg\sin\theta
+        \]
+        
+        This force will create a torque on the whole disk:
+        
+        \[
+        T_{\text{plank force}} = (M+m)mg\sin\theta R \quad \text{-----(1)}
+        \]
+        
+        Because the disk's center of mass is different from its axis of symmetry, it will also experience a torque due to gravity:
+        
+        \[
+        T_{\text{gravity}} = \vec{b} \times (M+m)g = (M+m)gb\sin\phi \quad \text{-----(2)}
+        \]
+        
+        Equating equations (1) and (2) gives us:
+        
+        \[
+        (M+m)mg\sin\theta R = (M+m)gb\sin\phi
+        \]
+        
+        Solving for \( \sin\phi \):
+        
+        \[
+        \sin\phi = \frac{\sin\theta R}{b}
+        \]
+        
+        In the problem's setup, I used \( \theta = \frac{\pi}{9} \), \( R = 4 \), and \( b = 1.75 \), and got \( \frac{51}{180}\pi \).
     </div>
+    
 </body>
 
 </html>
