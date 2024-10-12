@@ -50,6 +50,13 @@ function scene_setup() {
     rotate_group.add(bob);
     controls.target.copy(disk.position);
 
+    // Create a path from the disk to the bob
+    const path = new THREE.LineCurve3(disk.position.clone(), bob.position.clone());
+
+    const tubeGeometry = new THREE.TubeGeometry(path, 20, 0.51, 8, false); // Use proper parameters: segments, radius, radial segments, closed
+    const tubeMaterial = new THREE.MeshBasicMaterial({ color: 0xdddddd }); // Add color or material properties if needed
+    const tube = new THREE.Mesh(tubeGeometry, tubeMaterial);
+    rotate_group.add(tube);
     
 
     //plane
